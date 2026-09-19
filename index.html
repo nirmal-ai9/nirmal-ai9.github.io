@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nirmal | Frontend Developer</title>
+  <meta name="description" content="Portfolio of Nirmal, a frontend developer building clean, self-contained web apps such as DebugAI and TypeFlow." />
+  <meta name="author" content="Nirmal" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="canonical" href="https://nirmal-ai9.github.io/" />
 
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nirmal",
+    "url": "https://nirmal-ai9.github.io/",
+    "jobTitle": "Frontend Developer",
+    "sameAs": ["https://github.com/nirmal-ai9"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #14171f;
+      --text-muted: #5b6272;
+      --border: #e4e7ee;
+      --accent: #4f46e5;
+      --shadow: 0 1px 2px rgb(16 24 40 / 0.05), 0 8px 24px rgb(16 24 40 / 0.06);
+      --shadow-hover: 0 2px 4px rgb(16 24 40 / 0.06), 0 16px 32px rgb(16 24 40 / 0.1);
+      --radius: 1rem;
+      --space: 1.5rem;
+      --transition: 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0d12;
+        --surface: #141821;
+        --text: #eef0f6;
+        --text-muted: #9aa3b5;
+        --border: #232938;
+        --accent: #8b93ff;
+        --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.3);
+        --shadow-hover: 0 2px 4px rgb(0 0 0 / 0.4), 0 16px 32px rgb(0 0 0 / 0.45);
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 0.25rem;
+    }
+
+    .container {
+      width: min(100% - 2 * var(--space), 46rem);
+      margin-inline: auto;
+    }
+
+    .hero {
+      padding-block: clamp(3rem, 12vw, 7rem) 2.5rem;
+    }
+
+    .hero__eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero__title {
+      margin: 0 0 1rem;
+      font-size: clamp(2.25rem, 7vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .hero__lead {
+      max-width: 34rem;
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 1.125rem;
+    }
+
+    .projects {
+      flex: 1;
+      padding-block: 1rem 4rem;
+    }
+
+    .projects__heading {
+      margin: 0 0 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .projects__grid {
+      display: grid;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    @media (min-width: 40rem) {
+      .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      height: 100%;
+      padding: var(--space);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card__title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .card__arrow {
+      color: var(--accent);
+      transition: transform var(--transition);
+    }
+
+    .card:hover .card__arrow {
+      transform: translateX(4px);
+    }
+
+    .card__text {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+    }
+
+    .footer {
+      padding-block: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .footer__inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      justify-content: space-between;
+    }
+
+    .footer a:hover {
+      color: var(--text);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="hero__eyebrow">Frontend Developer</p>
+      <h1 class="hero__title">Hi, I'm Nirmal.</h1>
+      <p class="hero__lead">
+        I build clean, fast, self-contained web apps with a focus on visual polish and usability.
+      </p>
+    </div>
+  </header>
+
+  <main class="projects">
+    <div class="container">
+      <h2 class="projects__heading">Projects</h2>
+      <ul class="projects__grid">
+        <li>
+          <a class="card" href="/DebugAI/">
+            <h3 class="card__title">DebugAI <span class="card__arrow" aria-hidden="true">→</span></h3>
+            <p class="card__text">Paste your code, requirements, or console error and get an AI-powered diagnosis.</p>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="/TypeFlow/">
+            <h3 class="card__title">TypeFlow <span class="card__arrow" aria-hidden="true">→</span></h3>
+            <p class="card__text">A browser-based typing test that tracks WPM and accuracy in real time.</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>Built by Nirmal</span>
+      <a href="https://github.com/nirmal-ai9" rel="me noopener">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
