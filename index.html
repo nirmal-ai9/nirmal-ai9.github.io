@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nirmal | Web Developer</title>
@@ -38,7 +37,7 @@
     --text-secondary: #aaaaaa;
     --accent: #00ffff; /* Neon Blue */
     --accent-pink: #ff00ff; /* Neon Pink */
-    --accent-purple: #9400d3; /* Neon Purple */
+    --accent-purple: #b45cff; /* Neon Purple, lightened for text contrast */
     --accent-soft: rgba(0, 255, 255, 0.08);
     --border: #111111;
     --glow-soft: 0 0 10px rgba(0, 255, 255, 0.3);
@@ -575,6 +574,13 @@
   .community-card::before { top: -2px; left: -2px; border-width: 2px 0 0 2px; }
   .community-card::after { bottom: -2px; right: -2px; border-width: 0 2px 2px 0; }
 
+  .community-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
   .community-card p {
     color: var(--text-secondary);
     font-size: 16px;
@@ -671,7 +677,7 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <span class="nav-brand">nirmal-ai9</span>
+    <span class="nav-brand">Nirmal</span>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Arsenal</a>
@@ -689,7 +695,7 @@
       <div class="hero-text-col">
         <span class="avatar-wave">👋</span>
         <h1>Hi, I'm Nirmal</h1>
-        <p class="hero-role">Frontend & UI Developer | Hacking Web Realms | Aspiring Full-Stack</p>
+        <p class="hero-role">Web Developer | Hacking Web Realms | Aspiring Full-Stack</p>
         <div class="hero-typing" id="typing"><span id="typing-text"></span><span class="cursor">&nbsp;</span></div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:nirmal942894@gmail.com">Initialize mail</a>
@@ -710,7 +716,7 @@
     <h2>Design first. Function always.</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm a <strong>Frontend & UI Developer</strong> with a strong focus on minimal aesthetics, semantic HTML, and accessible web design. My philosophy revolves around writing clean, duplication-free code and shipping highly functional web applications.</p>
+        <p>I'm a <strong>Web Developer</strong> with a strong focus on minimal aesthetics, semantic HTML, and accessible web design. My philosophy revolves around writing clean, duplication-free code and shipping highly functional web applications.</p>
         <p>Lately I've been deepening my knowledge in <strong>Node.js, databases, and server-side development</strong> — bridging the gap toward full-stack engineering, one project at a time.</p>
         <div class="quote-card">"No dead code, no duplication, nothing left half-finished."</div>
       </div>
@@ -759,6 +765,13 @@
     <h2>Selected work logs</h2>
     <div class="project-grid">
       <div class="project-card">
+        <h3>DebugAI</h3>
+        <p>Paste your code, requirements, or console error and get an AI-powered diagnosis of what went wrong and how to fix it.</p>
+        <div class="project-actions">
+          <a class="visit-btn" href="https://nirmal-ai9.github.io/DebugAI/" target="_blank" rel="noopener">Visit site_</a>
+        </div>
+      </div>
+      <div class="project-card">
         <h3>JavaScript Challenges</h3>
         <p>A terminal-based collection of JavaScript challenges — solve problems, auto-generate solution templates, run tests, and contribute solutions through pull requests.</p>
         <div class="project-actions">
@@ -781,14 +794,6 @@
           <a class="repo-btn" href="https://github.com/nirmal-ai9/Inflation-calculator" target="_blank" rel="noopener">View repo_</a>
         </div>
       </div>
-      <div class="project-card">
-        <h3>Chess Clock</h3>
-        <p>Chess clock for over-the-board play — monochrome flip theme, custom time controls, Fischer increment, single HTML file.</p>
-        <div class="project-actions">
-          <a class="visit-btn" href="https://nirmal-ai9.github.io/Chess-clock/" target="_blank" rel="noopener">Visit site_</a>
-          <a class="repo-btn" href="https://github.com/nirmal-ai9/Chess-clock" target="_blank" rel="noopener">View repo_</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -796,7 +801,7 @@
     <span class="eyebrow">Network segment_</span>
     <h2>Build in public</h2>
     <div class="community-card">
-      <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--text-primary); text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);">Frontend & UI Developers Discord</h3>
+      <h3>Frontend & UI Developers Discord</h3>
       <p>Share feedback on projects, debug JavaScript together, and talk about modern web tech with a community of builders.</p>
       <div class="community-points">
         <div>🚀 Code reviews</div>
@@ -826,7 +831,7 @@
 </main>
 
 <footer>
-  Constructed by Nirmal::ai9 · Frontend & UI Developer · Cyberpunk ed.
+  Constructed by Nirmal::ai9 · Web Developer · Cyberpunk ed.
 </footer>
 
 <script>
