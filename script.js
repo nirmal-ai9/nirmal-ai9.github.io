@@ -141,3 +141,83 @@ function escapeHtml(value) {
 const titles = ['Nirmal.exe — definitely not boring', 'Nirmal.exe — debugging reality', 'Nirmal.exe — build mode', 'Nirmal.exe — loading questionable ideas'];
 let titleIndex = 0;
 setInterval(() => { document.title = titles[titleIndex++ % titles.length]; }, 3200);
+
+
+/* FUN COMMAND CONSOLE */
+const consoleOutput = document.querySelector("#console-output");
+const commandButtons = document.querySelectorAll("[data-command]");
+
+const responses = {
+  hello: [
+    "hello.exe loaded successfully. 👋",
+    "A wild visitor appeared.",
+    "Hi. You found the unnecessary terminal."
+  ],
+  coffee: [
+    "Coffee level: dangerously optimistic ☕",
+    "Status: one more cup would be irresponsible.",
+    "Coffee.exe is currently doing the heavy lifting."
+  ],
+  chaos: [
+    "CHAOS DEPLOYED. Nothing important exploded. Probably.",
+    "Running npm install confidence...",
+    "404: seriousness not found."
+  ],
+  secret: [
+    "You pressed the suspicious button. Respect.",
+    "There is no secret here. 👀",
+    "Okay fine. The secret is that you clicked it."
+  ]
+};
+
+function consoleSay(command) {
+  const list = responses[command] || [
+    "Available commands: hello, coffee, chaos, secret."
+  ];
+  const answer = list[Math.floor(Math.random() * list.length)];
+  if (consoleOutput) {
+    consoleOutput.innerHTML = answer;
+    consoleOutput.animate(
+      [{opacity:.2, transform:"translateY(3px)"},{opacity:1, transform:"translateY(0)"}],
+      {duration:220, easing:"ease-out"}
+    );
+  }
+  if (command === "chaos") {
+    document.body.classList.add("tiny-chaos");
+    setTimeout(() => document.body.classList.remove("tiny-chaos"), 900);
+  }
+}
+
+commandButtons.forEach(button => {
+  button.addEventListener("click", () => consoleSay(button.dataset.command));
+});
+
+/* The nonsense wall has four tiny joke responses. */
+const nonsenseReplies = {
+  debug: "Translation: I have no idea why it works, but please don't touch it.",
+  coffee: "This is not a bug. It's a lifestyle.",
+  css: "The browser knows exactly where the div should go. It simply refuses.",
+  deploy: "Future Nirmal is now responsible for Future Nirmal."
+};
+
+document.querySelectorAll(".nonsense-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const original = item.querySelector("b");
+    const key = item.dataset.nonsense;
+    const old = original.textContent;
+    original.textContent = nonsenseReplies[key];
+    item.classList.add("flash");
+    setTimeout(() => {
+      original.textContent = old;
+      item.classList.remove("flash");
+    }, 2300);
+  });
+});
+
+/* Tiny screen wiggle for the chaos command. */
+const extraStyle = document.createElement("style");
+extraStyle.textContent = `
+  .tiny-chaos main{animation:tinyChaos .12s linear 4}
+  @keyframes tinyChaos{0%{transform:translateX(0)}25%{transform:translateX(2px)}75%{transform:translateX(-2px)}100%{transform:translateX(0)}}
+`;
+document.head.appendChild(extraStyle);
