@@ -14,3 +14,110 @@ main{width:min(var(--max),calc(100% - 40px));margin:auto}.hero{min-height:calc(1
 @media(max-width:850px){.topbar nav{display:none}.hero{grid-template-columns:1fr;padding-top:65px}.hero-console{margin-top:20px}.quest-grid,.lab-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr}.build-intro,.lab-head{display:block}.build-intro p,.lab-head p{margin-top:18px}.toy-card{min-height:270px}}
 @media(max-width:560px){.topbar,main,footer{width:calc(100% - 28px)}.hero{padding:50px 0 70px}.hero h1{font-size:clamp(47px,14vw,68px)}.hero-sub{font-size:15px}.tiny-stats{gap:9px;flex-direction:column}.console-body{min-height:300px;padding:18px;font-size:10px}.sticker-a{right:-8px}.sticker-b{left:-8px}.section{padding:85px 0}.section h2{font-size:45px}.project-card{min-height:320px}.project-card h3{font-size:35px}.final-card{padding:75px 18px}footer{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee div{animation:none}.cursor-glow{display:none}.boot{display:none}.party,.flash{animation:none}}
+
+
+/* READABILITY PASS — keep the personality, kill the microscopic text */
+:root{
+  --muted:#aeb6bf;
+  --muted-strong:#c3cad1;
+}
+
+/* Small labels */
+.micro-label,
+.kicker,
+.project-meta,
+.section-number,
+.card-index,
+.status-pill,
+.desktop-nav,
+.button,
+.project-links a,
+.tags span,
+.community-points,
+footer,
+.floating-note,
+.visual-top,
+.visual-bottom,
+.identity-code{
+  font-size:12px;
+  line-height:1.45;
+}
+
+.micro-label{letter-spacing:.11em}
+.kicker{letter-spacing:.12em}
+.project-meta{letter-spacing:.09em}
+.section-number{font-size:13px}
+.card-index{font-size:12px}
+.status-pill{font-size:12px}
+.desktop-nav{font-size:12px}
+.button{font-size:12px}
+.project-links a{font-size:12px}
+.tags span{font-size:11px;padding:6px 9px}
+.community-points{font-size:11px}
+footer{font-size:11px}
+.floating-note{font-size:13px}
+.floating-note span{font-size:10px}
+.visual-top,.visual-bottom{font-size:11px}
+.identity-code{font-size:10px}
+
+/* Never let descriptive copy become whisper-text */
+.hero-lead,
+.about-main>p:not(.big-copy),
+.stack-card p,
+.project p,
+.community-copy{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--muted);
+}
+
+.big-copy{line-height:1.4}
+.fact span{font-size:10px}
+.fact strong{font-size:16px;line-height:1.45}
+
+/* Better contrast for secondary UI */
+.project-meta,
+.kicker,
+.section-number,
+.card-index,
+.fact span{
+  color:#a9b2bc;
+}
+.project-meta::before,
+.kicker::before{
+  color:var(--lime);
+}
+
+/* Mobile: don't squeeze labels */
+@media(max-width:560px){
+  .micro-label,
+  .kicker,
+  .project-meta,
+  .section-number,
+  .card-index,
+  .status-pill,
+  .desktop-nav,
+  .button,
+  .project-links a,
+  .tags span,
+  .community-points,
+  footer,
+  .floating-note,
+  .visual-top,
+  .visual-bottom{
+    font-size:11px;
+  }
+
+  .hero-lead,
+  .about-main>p:not(.big-copy),
+  .stack-card p,
+  .project p,
+  .community-copy{
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .identity-code{font-size:9px}
+}
+
+.skip-link{position:fixed;left:12px;top:-60px;z-index:100;padding:10px 14px;background:var(--lime);color:#071000;font:600 12px "DM Mono",monospace;border-radius:8px}.skip-link:focus{top:12px}
