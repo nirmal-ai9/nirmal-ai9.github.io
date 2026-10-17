@@ -121,3 +121,42 @@ footer{font-size:11px}
 }
 
 .skip-link{position:fixed;left:12px;top:-60px;z-index:100;padding:10px 14px;background:var(--lime);color:#071000;font:600 12px "DM Mono",monospace;border-radius:8px}.skip-link:focus{top:12px}
+
+
+/* FUN LAYER — deliberately playful, still readable */
+.chaos-console{
+  width:min(650px,100%);margin-top:28px;border:1px solid #29323c;
+  border-radius:14px;background:#090c11;box-shadow:0 18px 50px rgba(0,0,0,.28);
+  overflow:hidden;font-family:"DM Mono",monospace
+}
+.console-head{display:flex;align-items:center;gap:12px;padding:9px 12px;border-bottom:1px solid #1d252e;background:#0d1117}
+.console-head>span{display:flex;gap:5px}.console-head i{width:7px;height:7px;border-radius:50%;background:#4d5660}
+.console-head b{font-size:11px;color:#c6cdd4;font-weight:500}.console-head small{margin-left:auto;font-size:10px;color:#7f8993}
+.console-line{min-height:45px;padding:13px 14px;color:#b7c0c8;font-size:12px}
+.console-line>span:first-child{color:var(--lime);margin-right:10px}
+.console-line b{color:var(--lime)}
+.console-actions{display:flex;gap:7px;flex-wrap:wrap;padding:0 12px 12px}
+.console-actions button{
+  border:1px solid #29323c;background:#11161d;color:#aeb7c0;border-radius:7px;
+  padding:7px 9px;font:10px "DM Mono",monospace;cursor:pointer;transition:.2s
+}
+.console-actions button:hover{color:var(--lime);border-color:var(--lime);transform:translateY(-2px)}
+.console-actions button:active{transform:translateY(0) scale(.97)}
+.nonsense-section{border-bottom:0}
+.nonsense-card{
+  display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;padding:55px;
+  border:1px solid #2a333d;border-radius:20px;background:#0a0e13
+}
+.nonsense-copy h2{margin-top:7px}.nonsense-copy>p:last-child{color:var(--muted);margin-top:20px}
+.nonsense-list{display:flex;flex-direction:column;gap:7px}
+.nonsense-item{
+  display:grid;grid-template-columns:35px 1fr auto;align-items:center;gap:12px;
+  text-align:left;border:1px solid #202832;background:#0e1319;color:var(--text);
+  padding:15px;border-radius:9px;cursor:pointer;font:inherit;transition:.25s
+}
+.nonsense-item:hover{transform:translateX(7px);border-color:#3a4652;background:#11171e}
+.nonsense-item span{font:10px "DM Mono",monospace;color:#5e6873}
+.nonsense-item b{font-size:13px;font-weight:500}.nonsense-item em{font:9px "DM Mono",monospace;color:var(--lime);font-style:normal}
+.nonsense-item.flash{border-color:var(--lime);box-shadow:0 0 25px rgba(140,255,0,.08)}
+@media(max-width:850px){.nonsense-card{grid-template-columns:1fr;padding:35px 25px}}
+@media(max-width:560px){.console-head small{display:none}.console-line{font-size:11px}.nonsense-item{grid-template-columns:27px 1fr}.nonsense-item em{display:none}}
