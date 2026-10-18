@@ -221,3 +221,23 @@ extraStyle.textContent = `
   @keyframes tinyChaos{0%{transform:translateX(0)}25%{transform:translateX(2px)}75%{transform:translateX(-2px)}100%{transform:translateX(0)}}
 `;
 document.head.appendChild(extraStyle);
+
+
+
+document.querySelectorAll('.project-card').forEach((card) => {
+  card.addEventListener('click', (event) => {
+    // Preserve normal browser navigation and new-tab behavior.
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.altKey ||
+      card.target === '_blank'
+    ) return;
+
+    window.location.href = card.href;
+  });
+});
+
