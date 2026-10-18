@@ -534,6 +534,7 @@ h2 em {
   gap: 12px;
 }
 
+
 .project-card {
   min-height: 350px;
   padding: 24px;
@@ -544,13 +545,34 @@ h2 em {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  transition: .35s var(--ease);
+  transition: border-color .2s ease, box-shadow .2s ease;
   color: inherit;
   text-decoration: none;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
+
+.project-card:hover {
+  border-color: #4a4a41;
+  box-shadow: 0 8px 25px rgba(183, 255, 0, .06);
+}
+
+.project-card:active {
+  transform: scale(.99);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 4px;
+}
+
+.project-card::after {
+  pointer-events: none;
+}
+
 
 .project-card::after {
   content: "";
