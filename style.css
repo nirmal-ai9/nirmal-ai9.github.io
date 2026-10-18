@@ -535,6 +535,7 @@ h2 em {
 }
 
 
+
 .project-card {
   min-height: 350px;
   padding: 24px;
@@ -551,8 +552,19 @@ h2 em {
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  user-select: none;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  right: -80px;
+  bottom: -80px;
+  background: rgba(183, 255, 0, .08);
+  filter: blur(10px);
+  pointer-events: none;
 }
 
 .project-card:hover {
@@ -571,24 +583,6 @@ h2 em {
 
 .project-card::after {
   pointer-events: none;
-}
-
-
-.project-card::after {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  right: -80px;
-  bottom: -80px;
-  background: rgba(183, 255, 0, .08);
-  filter: blur(10px);
-}
-
-.project-card:hover {
-  transform: translateY(-8px) rotate(.4deg);
-  border-color: #4a4a41;
 }
 
 .project-card.purple::after {
